@@ -2,12 +2,15 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="Primeiro encontro do Itinerário Catequético 2025 do Grupo Padre Pio, com reflexão sobre a Introdução ao Catecismo da Igreja Católica (Parágrafos 1 a 25).">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Primeiro encontro do Itinerário Catequético 2025 do Grupo Padre Pio, com reflexão sobre a Introdução ao Catecismo da Igreja Católica (Parágrafos 1 a 25).">
   <title>Encontro 1 - Itinerário Catequético</title>
   <link rel="icon" type="image/png" href="logo-padrepio.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="stylesencontros.css">
   <script>
     tailwind.config = {
       theme: {
@@ -40,118 +43,29 @@
       }
     }
   </script>
-  <style>
-    .fade-in {
-      animation: fadeIn 0.8s ease-in forwards;
-      opacity: 0;
-    }
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-    .slide-up {
-      animation: slideUp 0.8s ease-out forwards;
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    @keyframes slideUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .ministrante-img {
-      transition: all 0.3s ease;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    }
-    .ministrante-img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-    .section-title {
-      position: relative;
-      display: inline-block;
-    }
-    .section-title::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -8px;
-      width: 70px;
-      height: 4px;
-      background: linear-gradient(90deg, #3b82f6, #22d3ee);
-      border-radius: 2px;
-    }
-    .logo-hover {
-      transition: all 0.4s ease;
-    }
-    .logo-hover:hover {
-      transform: rotate(5deg) scale(1.05);
-      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
-    }
-    .nav-pill {
-      transition: all 0.3s ease;
-    }
-    .nav-pill:hover {
-      background-color: rgba(255, 255, 255, 0.15);
-      transform: translateY(-2px);
-    }
-    .progress-bar {
-      height: 4px;
-      background: linear-gradient(90deg, #3b82f6, #22d3ee);
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 9999;
-    }
-    .theme-icon {
-      transition: all 0.3s ease;
-    }
-    .theme-icon:hover {
-      transform: scale(1.2) rotate(10deg);
-      color: #dc2626;
-    }
-    .floating-label {
-      position: absolute;
-      top: -10px;
-      left: 15px;
-      background: white;
-      padding: 0 10px;
-      font-size: 0.8rem;
-      color: #22d3ee;
-      font-weight: 600;
-    }
-    @media (min-width: 1024px) {
-      .container-custom {
-        width: 65%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .ministrante-img {
-        width: 140px;
-        height: 140px;
-      }
-    }
-  </style>
 </head>
 <body class="bg-background font-sans text-text">
   <div class="progress-bar" id="progressBar"></div>
   <header class="bg-header py-6 shadow-lg sticky top-0 z-50">
     <div class="container-custom mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center mb-4 md:mb-0">
-                <img src="logo-padrepio.png" alt="Logo Grupo Padre Pio" class="w-16 h-16 md:w-20 md:h-20 logo-hover mr-4">
-                <div>
-                    <h2 class="text-white text-xl md:text-2xl font-bold">Grupo Padre Pio</h2>
-                    <p class="text-gray-300 text-sm">Itinerário Catequético</p>
-                </div>
-            </div>
-            <nav class="flex space-x-1">
-                <a href="index.html" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Início</a>
-                <a href="#fundamentos" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Fundamentos</a>
-                <a href="#sacramentos" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Sacramentos</a>
-                <a href="#moral" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Moral</a>
-                <a href="#igreja" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Igreja</a>
-            </nav>
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center mb-4 md:mb-0">
+          <img src="logo-padrepio.png" alt="Logo Grupo Padre Pio" class="w-16 h-16 md:w-20 md:h-20 logo-hover mr-4">
+          <div>
+            <h2 class="text-white text-xl md:text-2xl font-bold">Grupo Padre Pio</h2>
+            <p class="text-gray-300 text-sm">Itinerário Catequético</p>
+          </div>
         </div>
+        <nav class="flex space-x-1">
+          <a href="index.html" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Início</a>
+          <a href="#fundamentos" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Fundamentos</a>
+          <a href="#sacramentos" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Sacramentos</a>
+          <a href="#moral" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Moral</a>
+          <a href="#igreja" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Igreja</a>
+        </nav>
+      </div>
     </div>
-</header>
+  </header>
 
   <main class="container-custom mx-auto px-4 py-8 md:py-12">
     <section class="text-center mb-18 slide-up">
@@ -162,7 +76,6 @@
           <p class="text-lg md:text-xl text-gray-700 italic mb-4">"A vida eterna é conhecer a Deus e a Jesus Cristo, seu Filho."</p>
           <p class="text-gray-600">— João 17, 3</p>
         </div>
-        
       </div>
     </section>
 
@@ -173,18 +86,14 @@
         </div>
         <h2 class="text-2xl md:text-3xl font-bold text-secondary section-title">Sobre o Encontro</h2>
       </div>
-
       <div class="flex justify-center mt-8">
-          <img src="img/eliomar.png" alt="Foto Eliomar/Valdênia" class="w-40 h-40 md:w-56 md:h-56 rounded-full ministrante-img border-2 border-white shadow">
-        </div>
-
+        <img src="img/eliomar.png" alt="Foto Eliomar/Valdênia" class="w-40 h-40 md:w-56 md:h-56 rounded-full ministrante-img border-2 border-white shadow">
+      </div>
       <div class="bg-white rounded-xl shadow-card p-8 transition-all duration-300 hover:shadow-card-hover">
         <p class="text-gray-700 mb-4">No dia <strong>17 de fevereiro de 2025</strong>, iniciamos com alegria nosso ciclo de estudos catequéticos sobre o <em>Catecismo da Igreja Católica</em> (CIC). Este primeiro encontro, ministrado por <strong>Eliomar</strong> e <strong>Valdênia</strong>, leigos católicos da Paróquia Santa Bárbara, em Picos, Piauí, abordou a <strong>Introdução ao Catecismo da Igreja Católica</strong>, dos parágrafos 1 a 25. Eliomar e Valdênia, que se dedicam à catequese e ao ensino de música para crianças e jovens da comunidade Parque da Exposição, compartilharam uma reflexão profunda sobre como conhecer e amar a Deus.</p>
-        <div class="flex items-center mt-6">
-          <div>
-            <p class="font-medium text-primary">Eliomar</p>
-            <p class="text-sm text-gray-500">Ministrante</p>
-          </div>
+        <div>
+          <p class="font-medium text-primary">Eliomar</p>
+          <p class="text-sm text-gray-500">Ministrante</p>
         </div>
       </div>
     </section>
@@ -215,7 +124,7 @@
         <div class="bg-accent p-3 rounded-full mr-4">
           <i class="fas fa-headphones text-white text-2xl theme-icon"></i>
         </div>
-        <h2 class="text-2xl md:text-3xl font-bold text-secondary section-title">Resumo do 1º Encontro </h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-secondary section-title">Resumo do 1º Encontro</h2>
       </div>
       <div class="bg-white rounded-xl shadow-card p-8 transition-all duration-300 hover:shadow-card-hover">
         <p class="text-gray-700 mb-4">Grupo Padre Pio</p>

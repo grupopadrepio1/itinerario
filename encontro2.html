@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="Segundo encontro do Itinerário Catequético 2025 do Grupo Padre Pio, com reflexão sobre a Revelação de Deus (Parágrafos 50 a 141 do Catecismo da Igreja Católica).">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Segundo encontro do Itinerário Catequético 2025 do Grupo Padre Pio, com reflexão sobre a Revelação de Deus (Parágrafos 50 a 141 do Catecismo da Igreja Católica).">
     <title>Encontro 2 - Itinerário Catequético</title>
     <link rel="icon" type="image/png" href="logo-padrepio.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesencontros.css">
     <script>
         tailwind.config = {
             theme: {
@@ -43,151 +43,37 @@
             }
         }
     </script>
-    <style>
-        .fade-in {
-            animation: fadeIn 0.8s ease-in forwards;
-            opacity: 0;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        .slide-up {
-            animation: slideUp 0.8s ease-out forwards;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        @keyframes slideUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .ministrante-img {
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .ministrante-img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .section-title {
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 70px;
-            height: 4px;
-            background: linear-gradient(90deg, #3b82f6, #22d3ee);
-            border-radius: 2px;
-        }
-
-        .logo-hover {
-            transition: all 0.4s ease;
-        }
-
-        .logo-hover:hover {
-            transform: rotate(5deg) scale(1.05);
-            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
-        }
-
-        .nav-pill {
-            transition: all 0.3s ease;
-        }
-
-        .nav-pill:hover {
-            background-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .progress-bar {
-            height: 4px;
-            background: linear-gradient(90deg, #3b82f6, #22d3ee);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 9999;
-        }
-
-        .theme-icon {
-            transition: all 0.3s ease;
-        }
-
-        .theme-icon:hover {
-            transform: scale(1.2) rotate(10deg);
-            color: #dc2626;
-        }
-
-        .floating-label {
-            position: absolute;
-            top: -10px;
-            left: 15px;
-            background: white;
-            padding: 0 10px;
-            font-size: 0.8rem;
-            color: #22d3ee;
-            font-weight: 600;
-        }
-
-        @media (min-width: 1024px) {
-            .container-custom {
-                width: 65%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .ministrante-img {
-                width: 140px;
-                height: 140px;
-            }
-        }
-    </style>
 </head>
-
 <body class="bg-background font-sans text-text">
     <div class="progress-bar" id="progressBar"></div>
     <header class="bg-header py-6 shadow-lg sticky top-0 z-50">
-    <div class="container-custom mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center mb-4 md:mb-0">
-                <img src="logo-padrepio.png" alt="Logo Grupo Padre Pio" class="w-16 h-16 md:w-20 md:h-20 logo-hover mr-4">
-                <div>
-                    <h2 class="text-white text-xl md:text-2xl font-bold">Grupo Padre Pio</h2>
-                    <p class="text-gray-300 text-sm">Itinerário Catequético</p>
+        <div class="container-custom mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="logo-padrepio.png" alt="Logo Grupo Padre Pio" class="w-16 h-16 md:w-20 md:h-20 logo-hover mr-4">
+                    <div>
+                        <h2 class="text-white text-xl md:text-2xl font-bold">Grupo Padre Pio</h2>
+                        <p class="text-gray-300 text-sm">Itinerário Catequético</p>
+                    </div>
                 </div>
+                <nav class="flex space-x-1">
+                    <a href="index.html" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Início</a>
+                    <a href="#fundamentos" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Fundamentos</a>
+                    <a href="#sacramentos" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Sacramentos</a>
+                    <a href="#moral" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Moral</a>
+                    <a href="#igreja" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Igreja</a>
+                </nav>
             </div>
-            <nav class="flex space-x-1">
-                <a href="index.html" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Início</a>
-                <a href="#fundamentos" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Fundamentos</a>
-                <a href="#sacramentos" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Sacramentos</a>
-                <a href="#moral" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Moral</a>
-                <a href="#igreja" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Igreja</a>
-            </nav>
         </div>
-    </div>
-</header>
+    </header>
 
     <main class="container-custom mx-auto px-4 py-8 md:py-12">
         <section class="text-center mb-18 slide-up">
             <div class="max-w-4xl mx-auto">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 font-serif">A Revelação de Deus
-                </h1>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 font-serif">A Revelação de Deus</h1>
                 <div class="relative bg-white rounded-xl p-8 shadow-card border-l-8 border-accent">
                     <span class="floating-label">Segundo Encontro</span>
-                    <p class="text-lg md:text-xl text-gray-700 italic mb-4">"No princípio, Deus criou o céu e a terra."
-                    </p>
+                    <p class="text-lg md:text-xl text-gray-700 italic mb-4">"No princípio, Deus criou o céu e a terra."</p>
                     <p class="text-gray-600">— Gênesis 1, 1</p>
                 </div>
             </div>
@@ -200,20 +86,11 @@
                 </div>
                 <h2 class="text-2xl md:text-3xl font-bold text-secondary section-title">Sobre o Encontro</h2>
             </div>
-
             <div class="flex justify-center mt-8">
-                <img src="img/kassiano.png" alt="Foto Kassiano Caetano"
-                    class="w-40 h-40 md:w-56 md:h-56 rounded-full ministrante-img border-2 border-white shadow">
+                <img src="img/kassiano.png" alt="Foto Kassiano Caetano" class="w-40 h-40 md:w-56 md:h-56 rounded-full ministrante-img border-2 border-white shadow">
             </div>
-
             <div class="bg-white rounded-xl shadow-card p-8 transition-all duration-300 hover:shadow-card-hover">
-                <p class="text-gray-700 mb-4">No dia <strong>3 de março de 2025</strong>, o segundo encontro do
-                    Itinerário Catequético 2025 foi realizado. Foi ministrado por <strong>Kassiano Caetano</strong>,
-                    leigo católico, médico, casado e um dos coordenadores do Grupo Padre Pio. Kassiano atua na Catequese
-                    Permanente, organizando as atividades de estudo além de desenvolver outras ações pastorais na
-                    comunidade. Neste encontro, foi abordada a <strong>Revelação de Deus</strong>, com base nos
-                    parágrafos 50 a 141 do <em>Catecismo da Igreja Católica</em>, explorando como Deus se comunica com a
-                    humanidade.</p>
+                <p class="text-gray-700 mb-4">No dia <strong>3 de março de 2025</strong>, o segundo encontro do Itinerário Catequético 2025 foi realizado. Foi ministrado por <strong>Kassiano Caetano</strong>, leigo católico, médico, casado e um dos coordenadores do Grupo Padre Pio. Kassiano atua na Catequese Permanente, organizando as atividades de estudo além de desenvolver outras ações pastorais na comunidade. Neste encontro, foi abordada a <strong>Revelação de Deus</strong>, com base nos parágrafos 50 a 141 do <em>Catecismo da Igreja Católica</em>, explorando como Deus se comunica com a humanidade.</p>
                 <div class="flex items-center mt-6">
                     <div>
                         <p class="font-medium text-primary">Kassiano Caetano</p>
@@ -226,40 +103,25 @@
         <section class="fade-in mb-18">
             <div class="flex items-center mb-8">
                 <div class="bg-accent p-3 rounded-full mr-4">
-                    <i class="fas fa-book text-white text-2xl theme-icon"></i>
+                    <i class="fas fa-book text-white text-clubs theme-icon"></i>
                 </div>
                 <h2 class="text-2xl md:text-3xl font-bold text-secondary section-title">Resumo da Reflexão</h2>
             </div>
             <div class="bg-white rounded-xl shadow-card p-8 transition-all duration-300 hover:shadow-card-hover">
-                <p class="text-gray-700 mb-4">O Catecismo (parágrafos 50 a 141) ensina que Deus, em sua bondade, se
-                    revela ao homem para convidá-lo à comunhão com Ele. A <strong>Revelação Divina</strong> ocorre em
-                    etapas, começando pela criação, passando pelos patriarcas e profetas, até atingir sua plenitude em
-                    <strong>Jesus Cristo</strong>, a Palavra Encarnada. Deus se comunica por meio de palavras e ações,
-                    mostrando seu plano de salvação.
-                </p>
-                <p class="text-gray-700 mb-4">A Revelação é transmitida pela <strong>Tradição</strong> e pela
-                    <strong>Escritura Sagrada</strong>, que formam um único depósito da fé, confiado à Igreja. A
-                    Tradição Apostólica, viva na Igreja, e a Bíblia, inspirada pelo Espírito Santo, são complementares.
-                    O Magistério da Igreja interpreta autenticamente esses tesouros, garantindo a fidelidade ao
-                    ensinamento de Cristo.
-                </p>
-                <p class="text-gray-700 mb-4">Kassiano destacou que a Revelação não é apenas um conjunto de verdades,
-                    mas um convite pessoal ao relacionamento com Deus. Ele enfatizou a importância de acolher a fé, que
-                    é a resposta humana à Revelação, e de vivê-la em comunidade, como faz o Grupo Padre Pio ao estudar
-                    os documentos da Igreja e promover ações pastorais.</p>
+                <p class="text-gray-700 mb-4">O Catecismo (parágrafos 50 a 141) ensina que Deus, em sua bondade, se revela ao homem para convidá-lo à comunhão com Ele. A <strong>Revelação Divina</strong> ocorre em etapas, começando pela criação, passando pelos patriarcas e profetas, até atingir sua plenitude em <strong>Jesus Cristo</strong>, a Palavra Encarnada. Deus se comunica por meio de palavras e ações, mostrando seu plano de salvação.</p>
+                <p class="text-gray-700 mb-4">A Revelação é transmitida pela <strong>Tradição</strong> e pela <strong>Escritura Sagrada</strong>, que formam um único depósito da fé, confiado à Igreja. A Tradição Apostólica, viva na Igreja, e a Bíblia, inspirada pelo Espírito Santo, são complementares. O Magistério da Igreja interpreta autenticamente esses tesouros, garantindo a fidelidade ao ensinamento de Cristo.</p>
+                <p class="text-gray-700 mb-4">Kassiano destacou que a Revelação não é apenas um conjunto de verdades, mas um convite pessoal ao relacionamento com Deus. Ele enfatizou a importância de acolher a fé, que é a resposta humana à Revelação, e de vivê-la em comunidade, como faz o Grupo Padre Pio ao estudar os documentos da Igreja e promover ações pastorais.</p>
                 <ul class="list-disc pl-6 mb-4 text-gray-700">
                     <li><strong>Revelação Natural</strong>: Deus se manifesta na criação, acessível à razão humana.</li>
-                    <li><strong>Revelação Sobrenatural</strong>: Culmina em Jesus Cristo, revelando o mistério de Deus.
-                    </li>
+                    <li><strong>Revelação Sobrenatural</strong>: Culmina em Jesus Cristo, revelando o mistério de Deus.</li>
                     <li><strong>Transmissão da Revelação</strong>: Através da Escritura, Tradição e Magistério.</li>
                     <li><strong>Resposta Humana</strong>: A fé, que é adesão a Deus e confiança em sua promessa.</li>
                 </ul>
-                <p class="text-gray-700 mb-4">A reflexão reforçou que a Revelação é um dom de amor, chamando todos a
-                    viverem como filhos de Deus, em comunhão com a Igreja e em missão no mundo.</p>
+                <p class="text-gray-700 mb-4">A reflexão reforçou que a Revelação é um dom de amor, chamando todos a viverem como filhos de Deus, em comunhão com a Igreja e em missão no mundo.</p>
             </div>
         </section>
 
-        <section class="fade-in mb-18">
+        <section classLabs="fade-in mb-18">
             <div class="flex items-center mb-8">
                 <div class="bg-accent p-3 rounded-full mr-4">
                     <i class="fas fa-headphones text-white text-2xl theme-icon"></i>
@@ -288,17 +150,14 @@
                 </div>
                 <div class="flex flex-col items-center">
                     <div class="flex space-x-4 mb-4">
-                        <a href="#"
-                            class="bg-white bg-opacity-10 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors">
+                        <a href="#" class="bg-white bg-opacity-10 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#"
-                            class="bg-white bg-opacity-10 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors">
+                        <a href="#" class="bg-white bg-opacity-10 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#"
-                            class="bg-white bg-opacity-10 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors">
-                            <i class="fab fa-youtube"></i>
+                        <a href="#" class="bg-white bg-opacity-10 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors">
+                            <i class="fab f-youtube"></i>
                         </a>
                     </div>
                     <p class="text-gray-400 text-sm">© 2025 Grupo Padre Pio. Todos os direitos reservados.</p>
@@ -307,8 +166,7 @@
         </div>
     </footer>
 
-    <button id="backToTop"
-        class="fixed bottom-6 right-6 bg-accent text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-secondary transform hover:scale-110">
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-accent text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-secondary transform hover:scale-110">
         <i class="fas fa-arrow-up text-lg"></i>
     </button>
 
@@ -348,5 +206,4 @@
         sections.forEach(section => observer.observe(section));
     </script>
 </body>
-
 </html>
