@@ -53,7 +53,6 @@
               class="nav-menu bg-header w-full h-full md:h-auto md:bg-transparent md:w-auto flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-1 p-6 md:p-0">
               <a href="itinerario.html" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm"
                 style="--index: 1">Itinerário Catequético</a>
-              
             </div>
           </div>
         </nav>
@@ -61,6 +60,26 @@
     </div>
   </header>
   <main class="container-custom mx-auto px-4 py-8 md:py-12">
+    <!-- Player de áudio aprimorado -->
+    <section class="audio-player-section mb-8">
+      <div class="flex flex-col max-w-lg">
+        <span class="text-text text-base font-semibold mb-2 text-left">Rádio Padre Pio</span>
+        <div class="audio-player bg-white rounded-lg shadow-md p-3 flex flex-col space-y-3 border-2 border-red-500">
+          <div class="flex items-center space-x-3">
+            <button id="playPauseBtn" class="bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-secondary transition-colors duration-300 shadow-sm" title="Play/Pause">
+              <i class="fas fa-play text-lg" id="playPauseIcon"></i>
+            </button>
+            <button id="stopBtn" class="bg-red-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors duration-300 shadow-sm" title="Stop">
+              <i class="fas fa-stop text-lg"></i>
+            </button>
+            <span id="currentTrack" class="text-text text-sm font-semibold"></span>
+          </div>
+          <!-- Linha do tempo -->
+          <input type="range" id="progressSlider" class="w-full h-1 bg-gray-200 rounded-full appearance-none cursor-pointer accent-accent" min="0" max="100" value="0">
+        </div>
+      </div>
+      <audio id="audioPlayer"></audio>
+    </section>
     <section class="cta-section text-center mb-8 slide-up">
       <a href="itinerario.html"
         class="cta-button inline-block bg-accent text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-secondary hover:scale-105 transition-all duration-300 shadow-lg">
@@ -82,7 +101,6 @@
               class="w-full h-full object-cover"></div>
           <div class="swiper-slide"><img src="carrossel/foto1 (6).webp" alt="Elaine, ministrante"
               class="w-full h-full object-cover"></div>
-
         </div>
         <div class="swiper-button-next text-white bg-accent bg-opacity-50 hover:bg-opacity-75 rounded-full p-2"></div>
         <div class="swiper-button-prev text-white bg-accent bg-opacity-50 hover:bg-opacity-75 rounded-full p-2"></div>
@@ -115,7 +133,7 @@
               <i class="fab fa-youtube"></i>
             </a>
           </div>
-          <p class="text-gray-400 text-sm">© 2025 Grupo Padre Pio. Todos os direitos reservados.</p>
+          <p class="text-gray-400 text-sm">© 2025 Grupo Padre Pio. <br> Organização Sem Fins Lucrativos.</p>
         </div>
       </div>
     </div>
@@ -125,6 +143,66 @@
     <i class="fas fa-arrow-up text-lg"></i>
   </button>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    // Audio Player Functionality
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playPauseIcon = document.getElementById('playPauseIcon');
+    const stopBtn = document.getElementById('stopBtn');
+    const currentTrackDisplay = document.getElementById('currentTrack');
+    const progressSlider = document.getElementById('progressSlider');
+
+    // Faixa de áudio
+    const track = {
+      src: 'https://ia600903.us.archive.org/8/items/playlist1_202506/playlist1.mp3',
+      title: ''
+    };
+
+    // Carregar a faixa
+    function loadTrack() {
+      audioPlayer.src = track.src;
+      currentTrackDisplay.textContent = track.title;
+    }
+
+    // Atualizar barra de progresso
+    audioPlayer.addEventListener('timeupdate', () => {
+      const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+      progressSlider.value = progress || 0;
+    });
+
+    // Navegar no áudio ao mover o slider
+    progressSlider.addEventListener('input', () => {
+      const seekTime = (progressSlider.value / 100) * audioPlayer.duration;
+      audioPlayer.currentTime = seekTime;
+    });
+
+    // Tocar/pausar
+    playPauseBtn.addEventListener('click', () => {
+      if (audioPlayer.paused) {
+        audioPlayer.play().catch(error => {
+          console.error('Erro ao reproduzir o áudio:', error);
+        });
+        playPauseIcon.classList.remove('fa-play');
+        playPauseIcon.classList.add('fa-pause');
+      } else {
+        audioPlayer.pause();
+        playPauseIcon.classList.remove('fa-pause');
+        playPauseIcon.classList.add('fa-play');
+      }
+    });
+
+    // Parar
+    stopBtn.addEventListener('click', () => {
+      audioPlayer.pause();
+      audioPlayer.currentTime = 0;
+      playPauseIcon.classList.remove('fa-pause');
+      playPauseIcon.classList.add('fa-play');
+      progressSlider.value = 0;
+    });
+
+    // Carregar a faixa ao iniciar
+    loadTrack();
+  </script>
   <script src="capascript.js"></script>
 </body>
 
