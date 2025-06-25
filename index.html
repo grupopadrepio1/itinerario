@@ -4,30 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <!-- Metatags padrão -->
-  <meta property="og:title" content="Itinerário Catequético" />
-  <meta property="og:description" content="Descubra o itinerário catequético com conteúdos ricos e inspiradores!" />
+  <meta property="og:title" content="Bem-vindo ao Itinerário Catequético" />
+  <meta property="og:description" content="Descubra o Itinerário Catequético do Grupo Padre Pio" />
   <meta property="og:image" content="https://grupopadrepio1.github.io/itinerario/logo-padrepio.png" />
-  <meta property="og:url" content="https://grupopadrepio1.github.io/itinerario/index.html" />
+  <meta property="og:url" content="https://grupopadrepio1.github.io/itinerario/capa.html" />
   <meta property="og:type" content="website" />
-
-  <!-- Para Twitter Cards (opcional, mas recomendado) -->
+  <!-- Para Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Itinerário Catequético" />
+  <meta name="twitter:title" content="Bem-vindo ao Itinerário Catequético" />
   <meta name="twitter:description" content="Descubra o itinerário catequético com conteúdos ricos e inspiradores!" />
   <meta name="twitter:image" content="https://grupopadrepio1.github.io/itinerario/logo-padrepio.png" />
-
-
   <!-- Básico -->
-
-  <title>Itinerário Catequético</title>
+  <title>Bem-vindo ao Itinerário Catequético</title>
   <link rel="icon" type="image/png" href="logo-padrepio.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="capastilo.css">
 </head>
 
 <body class="bg-background font-sans text-text">
@@ -42,801 +38,60 @@
             <p class="text-gray-300 text-sm">Itinerário Catequético</p>
           </div>
         </div>
-
         <nav class="relative flex items-center justify-end">
           <button class="hamburger md:hidden" aria-expanded="false" aria-controls="nav-menu"
             aria-label="Abrir menu de navegação">
             <span></span>
             <span></span>
             <span></span>
+            <span class="sr-only">Abrir menu</span>
           </button>
           <div
-            class="nav-menu-container fixed inset-0 bg-black bg-opacity-50 z-40 md:static md:bg-transparent md:flex md:items-center md:justify-end hidden md:block"
+            class="nav-menu-container fixed left-0 w-full bg-black bg-opacity-50 z-40 md:static md:bg-transparent md:flex md:items-center md:justify-end md:block"
             id="nav-menu">
             <div
-              class="nav-menu bg-header w-3/4 max-w-xs h-full md:h-auto md:bg-transparent md:w-auto flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-1 p-6 md:p-0">
-              <a href="index.html" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Início</a>
-              <a href="#fundamentos"
-                class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Fundamentos</a>
-              <a href="#sacramentos"
-                class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Sacramentos</a>
-              <a href="#moral" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Moral</a>
-              <a href="#igreja" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm">Igreja</a>
+              class="nav-menu bg-header w-full h-full md:h-auto md:bg-transparent md:w-auto flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-1 p-6 md:p-0">
+              <a href="itinerario.html" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm"
+                style="--index: 1">Itinerário Catequético</a>
+              
             </div>
           </div>
         </nav>
       </div>
     </div>
   </header>
-
   <main class="container-custom mx-auto px-4 py-8 md:py-12">
-    <section class="text-center mb-18 slide-up">
-      <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 font-serif">Itinerário Catequético</h1>
-        <div class="relative bg-white rounded-xl p-8 shadow-card border-l-8 border-accent">
-          <span class="floating-label">Plano de Estudo</span>
-          <p class="text-lg md:text-xl text-gray-700 italic mb-4">"A fé é um dom de Deus, mas é também um ato
-            profundamente humano."</p>
-          <p class="text-gray-600">— Catecismo da Igreja Católica</p>
-        </div>
-      </div>
+    <section class="cta-section text-center mb-8 slide-up">
+      <a href="itinerario.html"
+        class="cta-button inline-block bg-accent text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-secondary hover:scale-105 transition-all duration-300 shadow-lg">
+        Acessar Itinerário Catequético
+      </a>
     </section>
+    <section class="carousel-section mb-12 slide-up">
+      <div class="swiper mySwiper relative">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="/carrossel/foto1 (1).webp" alt="Eliomar, ministrante"
+              class="w-full h-full object-cover"></div>
+          <div class="swiper-slide"><img src="/carrossel/foto1 (2).webp" alt="Kassiano, ministrante"
+              class="w-full h-full object-cover"></div>
+          <div class="swiper-slide"><img src="/carrossel/foto1 (3).webp" alt="Padre Feliciano, sacerdote"
+              class="w-full h-full object-cover"></div>
+          <div class="swiper-slide"><img src="/carrossel/foto1 (4).webp" alt="Elaine, ministrante"
+              class="w-full h-full object-cover"></div>
+          <div class="swiper-slide"><img src="/carrossel/foto1 (5).webp" alt="Elaine, ministrante"
+              class="w-full h-full object-cover"></div>
+          <div class="swiper-slide"><img src="/carrossel/foto1 (6).webp" alt="Elaine, ministrante"
+              class="w-full h-full object-cover"></div>
 
-    <div class="space-y-22">
-      <section id="fundamentos" class="fade-in">
-        <div class="flex items-center mb-8">
-          <div class="bg-accent p-3 rounded-full mr-4">
-            <i class="fas fa-cross text-white text-2xl theme-icon"></i>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-secondary section-title">Fundamentos da Fé Católica</h2>
         </div>
-        <div
-          class="bg-white rounded-xl shadow-card overflow-hidden transition-all duration-300 hover:shadow-card-hover">
-          <div class="overflow-x-auto">
-            <table class="w-full">
-              <thead class="bg-tableHead text-white">
-                <tr>
-                  <th class="py-4 px-6 text-left font-medium">DATA</th>
-                  <th class="py-4 px-6 text-left font-medium">TEMA</th>
-                  <th class="py-4 px-6 text-left font-medium">MINISTRANTE</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-border">
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">17/02/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">1</span>
-                      <div class="flex flex-col">
-                        <a href="encontro1.html" class="hover:underline">Introdução ao Catecismo da Igreja Católica</a>
-                        <span class="text-sm text-gray-600">Parágrafos 1 a 25</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/eliomar.png" alt="Foto de Eliomar e Valdênia, ministrantes"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Eliomar</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">03/03/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">2</span>
-                      <div class="flex flex-col">
-                        <a href="encontro2.html" class="hover:underline">A Revelação de Deus</a>
-                        <span class="text-sm text-gray-600">Parágrafos 50 a 141</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/kassiano.png" alt="Foto de Kassiano Caetano, ministrante"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Kassiano Caetano</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">17/03/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">3</span>
-                      <div class="flex flex-col">
-                        <a href="encontro3.html" class="hover:underline">A Trindade</a>
-                        <span class="text-sm text-gray-600">Parágrafos 232 a 267</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/feliciano.png" alt="Foto de Padre Feliciano Dias, sacerdote"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Padre Feliciano Dias</div>
-                        <div class="text-xs text-gray-500">Sacerdote</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">31/03/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">4</span>
-                      <div class="flex flex-col">
-                        <a href="encontro4.html" class="hover:underline">A Criação e a Providência Divina</a>
-                        <span class="text-sm text-gray-600">Parágrafos 279 a 354</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/elaine.png" alt="Foto de Elaine Germina, ministrante"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Elaine Germina</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">21/04/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">5</span>
-                      <div class="flex flex-col">
-                        <a href="encontro5.html" class="hover:underline">O Pecado Original e suas Consequências</a>
-                        <span class="text-sm text-gray-600">Parágrafos 385 a 421</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/flavio.png" alt="Foto de Flávio, ministrante"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Flávio</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">05/05/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">6</span>
-                      <div class="flex flex-col">
-                        <a href="encontro6.html" class="hover:underline">A Missão de Jesus Cristo</a>
-                        <span class="text-sm text-gray-600">Parágrafos 422 a 682</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/marcospaulo.png" alt="Foto de Marcos Paulo, ministrante"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Marcos Paulo Luz</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section id="sacramentos" class="fade-in">
-        <div class="flex items-center mb-8">
-          <div class="bg-accent p-3 rounded-full mr-4">
-            <i class="fas fa-wine-glass-alt text-white text-2xl theme-icon"></i>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-secondary section-title">Os Sacramentos e a Vida Cristã</h2>
-        </div>
-        <div
-          class="bg-white rounded-xl shadow-card overflow-hidden transition-all duration-300 hover:shadow-card-hover">
-          <div class="overflow-x-auto">
-            <table class="w-full">
-              <thead class="bg-tableHead text-white">
-                <tr>
-                  <th class="py-4 px-6 text-left font-medium">DATA</th>
-                  <th class="py-4 px-6 text-left font-medium">TEMA</th>
-                  <th class="py-4 px-6 text-left font-medium">MINISTRANTE</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-border">
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">19/05/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">7</span>
-                      <div class="flex flex-col">
-                        <a href="encontro7.html" class="hover:underline">Introdução aos Sacramentos</a>
-                        <span class="text-sm text-gray-600">Parágrafos 1066 a 1209</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/leonardo.png" alt="Foto de Leonardo Caetano, ministrante"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Leonardo Caetano</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">02/06/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">8</span>
-                      <div class="flex flex-col">
-                        <a href="encontro8.html" class="hover:underline">O Batismo</a>
-                        <span class="text-sm text-gray-600">Parágrafos 1210 a 1284</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/padreferdiran.png" alt="Foto de Padre Ferdiran, sacerdote"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Padre Ferdiran</div>
-                        <div class="text-xs text-gray-500">Sacerdote</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">16/06/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">9</span>
-                      <div class="flex flex-col">
-                        <a href="encontro9.html" class="hover:underline">A Eucaristia</a>
-                        <span class="text-sm text-gray-600">Parágrafos 1322 a 1419</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/cláudio.png" alt="Foto de Cláudio, ministrante"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Cláudio</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">30/06/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">10</span>
-                      <div class="flex flex-col">
-                        <a href="encontro10.html" class="hover:underline">A Confirmação</a>
-                        <span class="text-sm text-gray-600">Parágrafos 1285 a 1321</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/vazio.png" alt="Foto de Padre Fernando, sacerdote"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Padre Fernando</div>
-                        <div class="text-xs text-gray-500">Sacerdote</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">14/07/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">11</span>
-                      <div class="flex flex-col">
-                        <a href="encontro11.html" class="hover:underline">Matrimônio e Ordem</a>
-                        <span class="text-sm text-gray-600">Parágrafos 1536 a 1666</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/danieljorgemariasatira.png" alt="Foto de Daniel Jorge e Maria Sátira, ministrantes"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Daniel Jorge / Maria Sátira</div>
-                        <div class="text-xs text-gray-500">Ministrantes</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">28/07/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">12</span>
-                      <div class="flex flex-col">
-                        <a href="encontro12.html" class="hover:underline">Unção dos Enfermos e Penitência</a>
-                        <span class="text-sm text-gray-600">Parágrafos 1420 a 1532</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/analenimarcos.png" alt="Foto de Analeny e Marcos, ministrantes"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Analeny e Marcos</div>
-                        <div class="text-xs text-gray-500">Ministrantes</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section id="moral" class="fade-in">
-        <div class="flex items-center mb-8">
-          <div class="bg-accent p-3 rounded-full mr-4">
-            <i class="fas fa-bible text-white text-2xl theme-icon"></i>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-secondary section-title">A Moral Cristã e os Mandamentos</h2>
-        </div>
-        <div
-          class="bg-white rounded-xl shadow-card overflow-hidden transition-all duration-300 hover:shadow-card-hover">
-          <div class="overflow-x-auto">
-            <table class="w-full">
-              <thead class="bg-tableHead text-white">
-                <tr>
-                  <th class="py-4 px-6 text-left font-medium">DATA</th>
-                  <th class="py-4 px-6 text-left font-medium">TEMA</th>
-                  <th class="py-4 px-6 text-left font-medium">MINISTRANTE</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-border">
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">11/08/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">13</span>
-                      <div class="flex flex-col">
-                        <a href="encontro13.html" class="hover:underline">A Vida Cristã</a>
-                        <span class="text-sm text-gray-600">Parágrafos 1691 a 1742</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/vazio.png" alt="Foto de Padre Alef, sacerdote"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Padre Alef</div>
-                        <div class="text-xs text-gray-500">Sacerdote</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">25/08/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">14</span>
-                      <div class="flex flex-col">
-                        <a href="encontro14.html" class="hover:underline">O Amor a Deus e ao Próximo</a>
-                        <span class="text-sm text-gray-600">Parágrafos 1822 a 1829</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/vazio.png" alt="Foto de ministrante a definir"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">A definir</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">08/09/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">15</span>
-                      <div class="flex flex-col">
-                        <a href="encontro15.html" class="hover:underline">Os Dez Mandamentos</a>
-                        <span class="text-sm text-gray-600">Parágrafos 2052 a 2557</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/jonaseedilane.png" alt="Foto de Jonas e Ediliane, ministrantes"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Jonas e Ediliane</div>
-                        <div class="text-xs text-gray-500">Ministrantes</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">22/09/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">16</span>
-                      <div class="flex flex-col">
-                        <a href="encontro16.html" class="hover:underline">As Bem-Aventuranças</a>
-                        <span class="text-sm text-gray-600">Parágrafos 1716 a 1729</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/ednaldatiago.png" alt="Foto de Edinalda e Tiago, ministrantes"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Edinalda e Tiago</div>
-                        <div class="text-xs text-gray-500">Ministrantes</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">06/10/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">17</span>
-                      <div class="flex flex-col">
-                        <a href="encontro17.html" class="hover:underline">A Moral Cristã e a Liberdade</a>
-                        <span class="text-sm text-gray-600">Parágrafos 1730 a 1748</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/marcospaulo.png" alt="Foto de Marcos Paulo, ministrante"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Marcos Paulo</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">20/10/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">18</span>
-                      <div class="flex flex-col">
-                        <a href="encontro18.html" class="hover:underline">Virtudes e Pecados Capitais</a>
-                        <span class="text-sm text-gray-600">Parágrafos 1830 a 1845</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/kassiano.png" alt="Foto de Rirone, ministrante"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Rirone</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section id="igreja" class="fade-in">
-        <div class="flex items-center mb-8">
-          <div class="bg-accent p-3 rounded-full mr-4">
-            <i class="fas fa-church text-white text-2xl theme-icon"></i>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-secondary section-title">A Igreja e a Esperança Cristã</h2>
-        </div>
-        <div
-          class="bg-white rounded-xl shadow-card overflow-hidden transition-all duration-300 hover:shadow-card-hover">
-          <div class="overflow-x-auto">
-            <table class="w-full">
-              <thead class="bg-tableHead text-white">
-                <tr>
-                  <th class="py-4 px-6 text-left font-medium">DATA</th>
-                  <th class="py-4 px-6 text-left font-medium">TEMA</th>
-                  <th class="py-4 px-6 text-left font-medium">MINISTRANTE</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-border">
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">03/11/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">19</span>
-                      <div class="flex flex-col">
-                        <a href="encontro19.html" class="hover:underline">A Igreja como Corpo de Cristo</a>
-                        <span class="text-sm text-gray-600">Parágrafos 748 a 810</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/padreismael.png" alt="Foto de Padre Ismael, ministrante"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Padre Ismael</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">17/11/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">20</span>
-                      <div class="flex flex-col">
-                        <a href="encontro20.html" class="hover:underline">A Hierarquia e os Ministérios na Igreja</a>
-                        <span class="text-sm text-gray-600">Parágrafos 871 a 945</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/vazio.png" alt="Foto de ministrante a definir"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">A definir</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">01/12/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">21</span>
-                      <div class="flex flex-col">
-                        <a href="encontro21.html" class="hover:underline">Os Santos e a Vida de Santidade</a>
-                        <span class="text-sm text-gray-600">Parágrafos 946 a 962 e 2012 a 2029</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/glorinha.png" alt="Foto de Glória, ministrante"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">Glória</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">15/12/2025</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">22</span>
-                      <div class="flex flex-col">
-                        <a href="encontro22.html" class="hover:underline">A Esperança Cristã</a>
-                        <span class="text-sm text-gray-600">Parágrafos 1817 a 1821</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/vazio.png" alt="Foto de ministrante a definir"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">A definir</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">05/01/2026</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">23</span>
-                      <div class="flex flex-col">
-                        <a href="encontro23.html" class="hover:underline">O Apocalipse e a Vitória de Cristo</a>
-                        <span class="text-sm text-gray-600">Parágrafos 668 a 682 e 1038 a 1060</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/vazio.png" alt="Foto de ministrante a definir"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">A definir</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="py-5 px-6">
-                    <span
-                      class="date-badge bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium">19/01/2026</span>
-                  </td>
-                  <td class="py-5 px-6 font-medium text-primary">
-                    <div class="flex items-center">
-                      <span
-                        class="bg-accent text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">24</span>
-                      <div class="flex flex-col">
-                        <a href="encontro24.html" class="hover:underline">Celebração e Conclusão do Curso</a>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-5 px-6">
-                    <div class="flex items-center">
-                      <img src="img/vazio.png" alt="Foto de ministrante a definir"
-                        class="w-10 h-10 rounded-full ministrante-img border-2 border-white shadow">
-                      <div class="ml-3">
-                        <div class="font-medium">A definir</div>
-                        <div class="text-xs text-gray-500">Ministrante</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <section class="my-18 slide-up">
-      <div class="bg-white rounded-xl shadow-card p-6">
-        <h2 class="text-2xl font-bold text-primary mb-4 flex items-center">
-          <i class="fas fa-calendar-alt text-accent mr-3 theme-icon"></i>
-          <span>Resumo do Calendário</span>
-        </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="bg-gray-50 p-4 rounded-lg shadow-sm text-center">
-            <div class="text-3xl font-bold text-accent mb-2">24</div>
-            <div class="text-sm font-medium text-gray-600">Encontros</div>
-          </div>
-          <div class="bg-gray-50 p-4 rounded-lg shadow-sm text-center">
-            <div class="text-3xl font-bold text-accent mb-2">4</div>
-            <div class="text-sm font-medium text-gray-600">Temas Principais</div>
-          </div>
-          <div class="bg-gray-50 p-4 rounded-lg shadow-sm text-center">
-            <div class="text-3xl font-bold text-accent mb-2">12</div>
-            <div class="text-sm font-medium text-gray-600">Meses</div>
-          </div>
-          <div class="bg-gray-50 p-4 rounded-lg shadow-sm text-center">
-            <div class="text-3xl font-bold text-accent mb-2">20+</div>
-            <div class="text-sm font-medium text-gray-600">Ministrantes</div>
-          </div>
-        </div>
+        <div class="swiper-button-next text-white bg-accent bg-opacity-50 hover:bg-opacity-75 rounded-full p-2"></div>
+        <div class="swiper-button-prev text-white bg-accent bg-opacity-50 hover:bg-opacity-75 rounded-full p-2"></div>
+        <div class="swiper-pagination"></div>
       </div>
     </section>
   </main>
-
   <footer class="bg-header py-8">
-    <div class="container mx-auto px-6">
+    <div class="container-custom mx-auto px-4">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-6 md:mb-0 text-center md:text-left">
           <div class="flex items-center justify-center md:justify-start mb-4">
@@ -865,13 +120,12 @@
       </div>
     </div>
   </footer>
-
   <button id="backToTop"
     class="fixed bottom-6 right-6 bg-accent text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-secondary transform hover:scale-110">
     <i class="fas fa-arrow-up text-lg"></i>
   </button>
-
-  <script src="script.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="capascript.js"></script>
 </body>
 
 </html>

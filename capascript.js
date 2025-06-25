@@ -69,10 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('header');
 
   if (hamburger && navMenuContainer && navMenu && header) {
-    // Calcular e definir a altura do header como variável CSS
     const setHeaderHeight = () => {
       const headerHeight = header.offsetHeight;
-      console.log('Header height:', headerHeight); // Depuração
+      console.log('Header height:', headerHeight);
       document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
     };
     setHeaderHeight();
@@ -82,13 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Hamburger clicked, toggling menu');
       const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
       hamburger.setAttribute('aria-expanded', !isExpanded);
+      hamburger.setAttribute('aria-label', isExpanded ? 'Abrir menu de navegação' : 'Fechar menu de navegação');
       hamburger.classList.toggle('active');
       navMenuContainer.classList.toggle('active');
       navMenu.classList.toggle('active');
       console.log('navMenuContainer classes:', navMenuContainer.classList.toString());
       console.log('navMenu classes:', navMenu.classList.toString());
 
-      // Gerenciar foco para acessibilidade
       if (!isExpanded) {
         setTimeout(() => {
           navLinks[0].focus();
@@ -96,33 +95,33 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Fechar menu ao clicar em um link
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         console.log('Nav link clicked, closing menu');
         hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Abrir menu de navegação');
         hamburger.classList.remove('active');
         navMenuContainer.classList.remove('active');
         navMenu.classList.remove('active');
       });
     });
 
-    // Fechar menu ao clicar fora
     document.addEventListener('click', (e) => {
       if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
         console.log('Clicked outside, closing menu');
         hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Abrir menu de navegação');
         hamburger.classList.remove('active');
         navMenuContainer.classList.remove('active');
         navMenu.classList.remove('active');
       }
     });
 
-    // Fechar menu ao pressionar a tecla Esc
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && hamburger.getAttribute('aria-expanded') === 'true') {
         console.log('Escape pressed, closing menu');
         hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Abrir menu de navegação');
         hamburger.classList.remove('active');
         navMenuContainer.classList.remove('active');
         navMenu.classList.remove('active');
@@ -130,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Gerenciar navegação por teclado
     navLinks.forEach((link, index) => {
       link.addEventListener('keydown', (e) => {
         if (e.key === 'Tab') {
@@ -152,4 +150,23 @@ document.addEventListener('DOMContentLoaded', () => {
       header
     });
   }
+
+  // Inicializar Swiper
+  var swiper = new Swiper('.mySwiper', {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    loop: true
+  });
 });

@@ -16,7 +16,7 @@
   --border: #d1d5db;
   --text: #1f2937;
   --highlight: #dc2626;
-  --header-height: 80px; /* Valor padrão, será sobrescrito pelo JS */
+  --header-height: 80px;
 }
 
 /* Aplicação de cores customizadas */
@@ -47,7 +47,7 @@ body {
   left: 0;
   width: 100%;
   height: calc(100vh - var(--header-height));
-  background-color: rgba(0, 0, 0, 0.6); /* Fundo mais escuro e suave */
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 40;
   transition: opacity 0.4s ease;
 }
@@ -67,9 +67,9 @@ body {
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centraliza os links verticalmente */
+  justify-content: center;
   box-sizing: border-box;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .nav-menu.active {
@@ -100,25 +100,35 @@ body {
 /* Estilo dos links do menu */
 .nav-pill {
   color: white !important;
-  padding: 1rem 2rem; /* Mais espaço nos links */
+  padding: 1rem 2rem;
   border-radius: 9999px;
   text-align: center;
   text-decoration: none;
-  font-size: 1.1rem; /* Fonte um pouco maior */
+  font-size: 1.1rem;
   font-weight: 600;
-  margin: 0.5rem 0; /* Espaçamento entre links */
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0.5rem 0;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.nav-menu.active .nav-pill {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(0.1s * var(--index));
 }
 
 .nav-pill:hover {
   background-color: var(--accent);
-  transform: translateY(-3px); /* Elevação mais notável */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra no hover */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 768px) {
   .nav-pill {
     margin: 0 0.5rem;
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -174,7 +184,7 @@ body {
   z-index: 1000;
 }
 
-/* Outros estilos gerais */
+/* Estilos gerais */
 .container-custom {
   max-width: 1200px;
   margin: 0 auto;
@@ -202,7 +212,7 @@ body {
 @keyframes slideUp {
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
 }
 
@@ -215,102 +225,81 @@ body {
   transform: scale(1.05);
 }
 
-.shadow-card {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Estilos para o CTA */
+.cta-section {
+  text-align: center;
+  padding: 2rem 0;
 }
 
-.shadow-card-hover:hover {
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-}
-
-.floating-label {
-  position: absolute;
-  top: -0.75rem;
-  left: 1rem;
-  background-color: var(--background);
-  padding: 0 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--accent);
-}
-
-.date-badge {
+.cta-button {
   display: inline-block;
-  transition: all 0.3s ease;
-}
-
-.date-badge:hover {
-  background-color: var(--secondary);
-  color: white;
-}
-
-.ministrante-img {
-  transition: transform 0.3s ease;
-}
-
-.ministrante-img:hover {
-  transform: scale(1.1);
-}
-
-.theme-icon {
-  transition: transform 0.3s ease;
-}
-
-.theme-icon:hover {
-  transform: rotate(45deg);
-}
-
-.section-title {
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -0.25rem;
-  left: 0;
-  width: 3rem;
-  height: 3px;
+  padding: 1rem 2rem;
   background-color: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Estilos para tabelas */
-.table-row {
-  min-height: 4.5rem;
+.cta-button:hover {
+  background-color: var(--secondary);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.table-row:nth-child(3n+1) {
-  background-color: #ffffff;
+/* Estilos para o carrossel */
+.carousel-section {
+  max-width: 100%;
+  margin: 0 auto;
 }
 
-.table-row:nth-child(3n+2) {
-  background-color: var(--tableEven);
-}
-
-.table-row:nth-child(3n) {
-  background-color: var(--tableOddDirty);
-}
-
-table td {
-  padding: 1rem 1.5rem;
-  vertical-align: middle;
-}
-
-/* Estilos para seções */
-section {
-  margin-bottom: 8rem;
-  position: relative;
-}
-
-section::after {
-  content: '';
-  position: absolute;
-  bottom: -2rem;
-  left: 0;
+.swiper {
   width: 100%;
-  height: 1px;
-  background-color: var(--border);
+  height: 400px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: white;
+  background-color: var(--accent);
   opacity: 0.5;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  opacity: 0.75;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--accent);
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--accent);
+  opacity: 1;
+}
+
+/* Estilos para o footer */
+footer a:hover {
+  background-color: var(--accent);
 }
 
 /* Melhorias responsivas */
@@ -323,21 +312,13 @@ section::after {
     padding: 0 0.5rem;
   }
 
-  table td {
-    padding: 0.75rem 1rem;
-    font-size: 0.875rem;
+  .swiper {
+    height: 250px;
   }
 
-  .table-row {
-    min-height: 3.5rem;
-  }
-
-  section {
-    margin-bottom: 4rem;
-  }
-
-  section::after {
-    bottom: -1rem;
+  .cta-button {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
   }
 }
 
