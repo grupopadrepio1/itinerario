@@ -19,7 +19,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="capastilo.css">
-  <link rel="stylesheet" href="estiloplayer.css">
 </head>
 <body class="bg-background font-sans text-text">
   <header class="bg-header py-6 shadow-lg sticky top-0 z-50">
@@ -30,7 +29,7 @@
           <img src="logo-padrepio.png" alt="Logo Grupo Padre Pio" class="w-16 h-16 md:w-20 md:h-20 logo-hover mr-4">
           <div>
             <h2 class="text-white text-xl md:text-2xl font-bold">Grupo Padre Pio</h2>
-            <p class="text-gray-300 text-sm">Itinerário Catequético</p>
+            <p class="text-gray-300 text-sm">Caminhamos na Estrada de Jesus</p>
           </div>
         </div>
         <nav class="relative flex items-center justify-end">
@@ -49,26 +48,39 @@
   <main class="container-custom mx-auto px-4 py-8 md:py-12">
     <section class="audio-player-section mb-8">
       <div class="flex flex-col">
-        <span class="text-base font-semibold mb-2 text-left">Rádio Padre Pio</span>
-        <div class="audio-player">
-          <div class="flex items-center space-x-3">
-            <button id="playPauseBtn" title="Play/Pause">
-              <i class="fas fa-play text-base" id="playPauseIcon"></i>
-            </button>
-            <button id="stopBtn" title="Stop">
-              <i class="fas fa-stop text-base" id="stopIcon"></i>
-            </button>
-            <input type="range" id="volumeSlider" min="0" max="100" value="100" title="Volume">
-            <span id="currentTrack" class="truncate"></span>
+        <span class="text-base font-semibold mb-2 text-left"></span>
+        <div class="player-container bg-gray-800 rounded-lg shadow-lg p-5 w-[98%] md:w-[80%] mx-auto flex flex-col space-y-3">
+          <div class="cover">
+            <img id="cover-img" src="logowebradio.webp" alt="Logo da Rádio" class="w-12 h-12 md:w-20 md:h-20 rounded-md object-cover">
           </div>
-          <input type="range" id="progressSlider" min="0" max="100" value="0">
-          <div class="time-display">
-            <span id="currentTime">0:00</span>
-            <span id="duration">0:00</span>
+          <div class="controls-section flex items-center justify-end">
+            <div class="controls-container flex items-center space-x-5">
+              <button id="play-btn" class="bg-accent text-white p-2 rounded-full hover:bg-secondary transition-all duration-300" aria-label="Tocar ou pausar música">
+                <i class="fas fa-play text-sm"></i>
+              </button>
+              <div class="progress-container flex flex-col w-28 md:w-36">
+                <input type="range" id="progress-bar" value="0" class="w-full h-1 bg-gray-600 rounded-lg appearance-none cursor-default" aria-label="Progresso da música" disabled>
+                <div class="time-info flex justify-between text-xs text-gray-400 mt-1">
+                  <span id="current-time">0:00</span>
+                  <span id="duration">0:00</span>
+                </div>
+              </div>
+              <div class="volume-control flex flex-col items-center w-8 md:w-10">
+                <i class="fas fa-volume-up text-gray-400 text-xs mb-2"></i>
+                <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="0.7" class="vertical bg-gray-600 rounded-lg cursor-pointer" aria-label="Controle de volume">
+              </div>
+            </div>
           </div>
+          <div class="info-section flex items-center space-x-5">
+            <div class="info flex md:flex-col flex-row items-center md:items-start space-x-2 md:space-x-0 md:space-y-1">
+              <h2 id="music-title" class="text-base md:text-lg font-bold text-white">Web Rádio</h2>
+              <span class="text-xs md:text-sm text-gray-400 md:hidden"> - </span>
+              <p id="artist" class="text-xs md:text-sm text-gray-400" aria-live="polite">Carregando...</p>
+            </div>
+          </div>
+          <audio id="audio-player" preload="auto"></audio>
         </div>
       </div>
-      <audio id="audioPlayer"></audio>
     </section>
     <section class="cta-section text-center mb-8 slide-up">
       <a href="itinerario.html" class="cta-button inline-block bg-accent text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-secondary hover:scale-105 transition-all duration-300 shadow-lg">
@@ -99,7 +111,7 @@
             <img src="logo-padrepio.png" alt="Logo Grupo Padre Pio" class="w-12 h-12 mr-3">
             <h3 class="text-white text-lg font-bold">Grupo Padre Pio</h3>
           </div>
-          <p class="text-gray-400 text-sm">Itinerário Catequético 2025</p>
+          <p class="text-gray-400 text-sm">Caminhamos na Estrada de Jesus</p>
         </div>
         <div class="flex flex-col items-center">
           <div class="flex space-x-4 mb-4">
@@ -112,11 +124,12 @@
       </div>
     </div>
   </footer>
-  <button id="backToTop" class="fixed bottom-6 right-6 bg-accent text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-secondary transform hover:scale-110">
+  <button id="backT
+oTop" class="fixed bottom-6 right-6 bg-accent text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-secondary transform hover:scale-110">
     <i class="fas fa-arrow-up text-lg"></i>
   </button>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="capascript.js"></script>
-  <script src="scriptplayer.js"></script>
+  <script src="radioscript.js"></script>
 </body>
 </html>

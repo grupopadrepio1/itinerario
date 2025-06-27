@@ -153,3 +153,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+// MODAL DE FOTOS DE ITINERÁRIO
+
+function openImageModal(src) {
+  const modal = document.getElementById('imageModal');
+  const modalImage = document.getElementById('modalImage');
+  modalImage.src = src;
+  modal.classList.remove('hidden');
+}
+
+document.getElementById('closeModal').addEventListener('click', () => {
+  const modal = document.getElementById('imageModal');
+  modal.classList.add('hidden');
+});
+
+// Fecha o modal ao clicar fora da imagem
+document.getElementById('imageModal').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) {
+    e.currentTarget.classList.add('hidden');
+  }
+});

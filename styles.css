@@ -246,6 +246,7 @@ body {
 
 .ministrante-img {
   transition: transform 0.3s ease;
+  cursor: pointer; /* Indica que a imagem é clicável */
 }
 
 .ministrante-img:hover {
@@ -313,6 +314,35 @@ section::after {
   opacity: 0.5;
 }
 
+/* Estilos para o modal de imagem ampliada */
+#imageModal {
+  transition: opacity 0.3s ease;
+}
+
+#imageModal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#imageModal:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#modalImage {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+#closeModal {
+  transition: transform 0.3s ease;
+}
+
+#closeModal:hover {
+  transform: scale(1.1);
+}
+
 /* Melhorias responsivas */
 @media (max-width: 640px) {
   .nav-menu {
@@ -338,6 +368,11 @@ section::after {
 
   section::after {
     bottom: -1rem;
+  }
+
+  #modalImage {
+    max-width: 95vw;
+    max-height: 70vh;
   }
 }
 
