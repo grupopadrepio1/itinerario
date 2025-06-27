@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Metatags padrão -->
+  <title>Bem-vindo ao Itinerário Catequético</title>
   <meta property="og:title" content="Bem-vindo ao Itinerário Catequético" />
   <meta property="og:description" content="Descubra o Itinerário Catequético do Grupo Padre Pio" />
   <meta property="og:image" content="https://grupopadrepio1.github.io/itinerario/logo-padrepio.png" />
   <meta property="og:url" content="https://grupopadrepio1.github.io/itinerario/capa.html" />
   <meta property="og:type" content="website" />
-  <!-- Para Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Bem-vindo ao Itinerário Catequético" />
   <meta name="twitter:description" content="Descubra o itinerário catequético com conteúdos ricos e inspiradores!" />
   <meta name="twitter:image" content="https://grupopadrepio1.github.io/itinerario/logo-padrepio.png" />
-  <!-- Básico -->
-  <title>Bem-vindo ao Itinerário Catequético</title>
   <link rel="icon" type="image/png" href="logo-padrepio.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="capastilo.css">
+  <link rel="stylesheet" href="estiloplayer.css">
 </head>
-
 <body class="bg-background font-sans text-text">
   <header class="bg-header py-6 shadow-lg sticky top-0 z-50">
     <div class="progress-bar" id="progressBar"></div>
@@ -39,20 +34,12 @@
           </div>
         </div>
         <nav class="relative flex items-center justify-end">
-          <button class="hamburger md:hidden" aria-expanded="false" aria-controls="nav-menu"
-            aria-label="Abrir menu de navegação">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span class="sr-only">Abrir menu</span>
+          <button class="hamburger md:hidden" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu de navegação">
+            <span></span><span></span><span></span><span class="sr-only">Abrir menu</span>
           </button>
-          <div
-            class="nav-menu-container fixed left-0 w-full bg-black bg-opacity-50 z-40 md:static md:bg-transparent md:flex md:items-center md:justify-end md:block"
-            id="nav-menu">
-            <div
-              class="nav-menu bg-header w-full h-full md:h-auto md:bg-transparent md:w-auto flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-1 p-6 md:p-0">
-              <a href="itinerario.html" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm"
-                style="--index: 1">Itinerário Catequético</a>
+          <div class="nav-menu-container fixed left-0 w-full bg-black bg-opacity-50 z-40 md:static md:bg-transparent md:flex md:items-center md:justify-end md:block" id="nav-menu">
+            <div class="nav-menu bg-header w-full h-full md:h-auto md:bg-transparent md:w-auto flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-1 p-6 md:p-0">
+              <a href="itinerario.html" class="nav-pill text-white px-4 py-2 rounded-full font-medium text-sm" style="--index: 1">Itinerário Catequético</a>
             </div>
           </div>
         </nav>
@@ -60,47 +47,43 @@
     </div>
   </header>
   <main class="container-custom mx-auto px-4 py-8 md:py-12">
-    <!-- Player de áudio aprimorado -->
     <section class="audio-player-section mb-8">
-      <div class="flex flex-col max-w-lg">
-        <span class="text-text text-base font-semibold mb-2 text-left">Rádio Padre Pio</span>
-        <div class="audio-player bg-white rounded-lg shadow-md p-3 flex flex-col space-y-3 border-2 border-red-500">
+      <div class="flex flex-col">
+        <span class="text-base font-semibold mb-2 text-left">Rádio Padre Pio</span>
+        <div class="audio-player">
           <div class="flex items-center space-x-3">
-            <button id="playPauseBtn" class="bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-secondary transition-colors duration-300 shadow-sm" title="Play/Pause">
-              <i class="fas fa-play text-lg" id="playPauseIcon"></i>
+            <button id="playPauseBtn" title="Play/Pause">
+              <i class="fas fa-play text-base" id="playPauseIcon"></i>
             </button>
-            <button id="stopBtn" class="bg-red-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors duration-300 shadow-sm" title="Stop">
-              <i class="fas fa-stop text-lg"></i>
+            <button id="stopBtn" title="Stop">
+              <i class="fas fa-stop text-base" id="stopIcon"></i>
             </button>
-            <span id="currentTrack" class="text-text text-sm font-semibold"></span>
+            <input type="range" id="volumeSlider" min="0" max="100" value="100" title="Volume">
+            <span id="currentTrack" class="truncate"></span>
           </div>
-          <!-- Linha do tempo -->
-          <input type="range" id="progressSlider" class="w-full h-1 bg-gray-200 rounded-full appearance-none cursor-pointer accent-accent" min="0" max="100" value="0">
+          <input type="range" id="progressSlider" min="0" max="100" value="0">
+          <div class="time-display">
+            <span id="currentTime">0:00</span>
+            <span id="duration">0:00</span>
+          </div>
         </div>
       </div>
       <audio id="audioPlayer"></audio>
     </section>
     <section class="cta-section text-center mb-8 slide-up">
-      <a href="itinerario.html"
-        class="cta-button inline-block bg-accent text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-secondary hover:scale-105 transition-all duration-300 shadow-lg">
+      <a href="itinerario.html" class="cta-button inline-block bg-accent text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-secondary hover:scale-105 transition-all duration-300 shadow-lg">
         Acessar Itinerário Catequético
       </a>
     </section>
     <section class="carousel-section mb-12 slide-up">
       <div class="swiper mySwiper relative">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="carrossel/foto1 (1).webp" alt="Eliomar, ministrante"
-              class="w-full h-full object-cover"></div>
-          <div class="swiper-slide"><img src="carrossel/foto1 (2).webp" alt="Kassiano, ministrante"
-              class="w-full h-full object-cover"></div>
-          <div class="swiper-slide"><img src="carrossel/foto1 (3).webp" alt="Padre Feliciano, sacerdote"
-              class="w-full h-full object-cover"></div>
-          <div class="swiper-slide"><img src="carrossel/foto1 (4).webp" alt="Elaine, ministrante"
-              class="w-full h-full object-cover"></div>
-          <div class="swiper-slide"><img src="carrossel/foto1 (5).webp" alt="Elaine, ministrante"
-              class="w-full h-full object-cover"></div>
-          <div class="swiper-slide"><img src="carrossel/foto1 (6).webp" alt="Elaine, ministrante"
-              class="w-full h-full object-cover"></div>
+          <div class="swiper-slide"><img src="carrossel/foto1 (1).webp" alt="Imagem 1 do carrossel" class="w-full h-full object-cover"></div>
+          <div class="swiper-slide"><img src="carrossel/foto1 (2).webp" alt="Imagem 2 do carrossel" class="w-full h-full object-cover"></div>
+          <div class="swiper-slide"><img src="carrossel/foto1 (3).webp" alt="Imagem 3 do carrossel" class="w-full h-full object-cover"></div>
+          <div class="swiper-slide"><img src="carrossel/foto1 (4).webp" alt="Imagem 4 do carrossel" class="w-full h-full object-cover"></div>
+          <div class="swiper-slide"><img src="carrossel/foto1 (5).webp" alt="Imagem 5 do carrossel" class="w-full h-full object-cover"></div>
+          <div class="swiper-slide"><img src="carrossel/foto1 (6).webp" alt="Imagem 6 do carrossel" class="w-full h-full object-cover"></div>
         </div>
         <div class="swiper-button-next text-white bg-accent bg-opacity-50 hover:bg-opacity-75 rounded-full p-2"></div>
         <div class="swiper-button-prev text-white bg-accent bg-opacity-50 hover:bg-opacity-75 rounded-full p-2"></div>
@@ -120,90 +103,20 @@
         </div>
         <div class="flex flex-col items-center">
           <div class="flex space-x-4 mb-4">
-            <a href="#"
-              class="bg-white bg-opacity-10 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#"
-              class="bg-white bg-opacity-10 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#"
-              class="bg-white bg-opacity-10 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors">
-              <i class="fab fa-youtube"></i>
-            </a>
+            <a href="#" class="bg-white bg-opacity-10 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="bg-white bg-opacity-10 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="bg-white bg-opacity-10 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-colors"><i class="fab fa-youtube"></i></a>
           </div>
           <p class="text-gray-400 text-sm">© 2025 Grupo Padre Pio. <br> Organização Sem Fins Lucrativos.</p>
         </div>
       </div>
     </div>
   </footer>
-  <button id="backToTop"
-    class="fixed bottom-6 right-6 bg-accent text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-secondary transform hover:scale-110">
+  <button id="backToTop" class="fixed bottom-6 right-6 bg-accent text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-secondary transform hover:scale-110">
     <i class="fas fa-arrow-up text-lg"></i>
   </button>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    // Audio Player Functionality
-    const audioPlayer = document.getElementById('audioPlayer');
-    const playPauseBtn = document.getElementById('playPauseBtn');
-    const playPauseIcon = document.getElementById('playPauseIcon');
-    const stopBtn = document.getElementById('stopBtn');
-    const currentTrackDisplay = document.getElementById('currentTrack');
-    const progressSlider = document.getElementById('progressSlider');
-
-    // Faixa de áudio
-    const track = {
-      src: 'https://ia600903.us.archive.org/8/items/playlist1_202506/playlist1.mp3',
-      title: ''
-    };
-
-    // Carregar a faixa
-    function loadTrack() {
-      audioPlayer.src = track.src;
-      currentTrackDisplay.textContent = track.title;
-    }
-
-    // Atualizar barra de progresso
-    audioPlayer.addEventListener('timeupdate', () => {
-      const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-      progressSlider.value = progress || 0;
-    });
-
-    // Navegar no áudio ao mover o slider
-    progressSlider.addEventListener('input', () => {
-      const seekTime = (progressSlider.value / 100) * audioPlayer.duration;
-      audioPlayer.currentTime = seekTime;
-    });
-
-    // Tocar/pausar
-    playPauseBtn.addEventListener('click', () => {
-      if (audioPlayer.paused) {
-        audioPlayer.play().catch(error => {
-          console.error('Erro ao reproduzir o áudio:', error);
-        });
-        playPauseIcon.classList.remove('fa-play');
-        playPauseIcon.classList.add('fa-pause');
-      } else {
-        audioPlayer.pause();
-        playPauseIcon.classList.remove('fa-pause');
-        playPauseIcon.classList.add('fa-play');
-      }
-    });
-
-    // Parar
-    stopBtn.addEventListener('click', () => {
-      audioPlayer.pause();
-      audioPlayer.currentTime = 0;
-      playPauseIcon.classList.remove('fa-pause');
-      playPauseIcon.classList.add('fa-play');
-      progressSlider.value = 0;
-    });
-
-    // Carregar a faixa ao iniciar
-    loadTrack();
-  </script>
   <script src="capascript.js"></script>
+  <script src="scriptplayer.js"></script>
 </body>
-
 </html>
